@@ -3,7 +3,7 @@ import os
 from PyQt6.QtWidgets import QApplication, QWidget, QVBoxLayout, QLabel, QPushButton, QMessageBox
 
 # Function to send knock using nmap
-def send_knock(port_sequence, server_ip="45.152.86.73"):
+def send_knock(port_sequence, server_ip="ip-server"):
     for port in port_sequence:
         command = f"nmap -p {port} --scanflags SYN {server_ip}"
         os.system(command)
