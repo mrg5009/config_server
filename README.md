@@ -29,7 +29,7 @@ sudo nano /etc/knockd.conf
 
 ```bash
 [openSSH]
-    sequence    = 7000,8000,9000
+    sequence    = 3000,4000,5000
     seq_timeout = 5
     command     = /sbin/iptables -I INPUT -p tcp --dport 22 -j ACCEPT
     tcpflags    = syn
@@ -42,7 +42,7 @@ sudo nano /etc/knockd.conf
 ```
 
 **توضیحات**:
-- **openSSH**: با این دنباله پورت‌ها (7000, 8000, 9000) می‌تونید دسترسی به SSH رو باز کنید.
+- **openSSH**: با این دنباله پورت‌ها (5000, 4000, 3000) می‌تونید دسترسی به SSH رو باز کنید.
 - **closeSSH**: این یکی هم برای بستن دسترسی به SSH با دنباله معکوسه (1500, 1400, 1300).
 
 ##### 2.2 تنظیم فایل `/etc/default/knockd`
@@ -90,9 +90,9 @@ nano knock_open.bat
 و این دستورات رو داخلش بذارید:
 
 ```bash
-nmap -p 7000 --scanflags SYN <ip server>
-nmap -p 8000 --scanflags SYN <ip server>
-nmap -p 9000 --scanflags SYN <ip server>
+nmap -p 3000 --scanflags SYN <ip server>
+nmap -p 4000 --scanflags SYN <ip server>
+nmap -p 5000 --scanflags SYN <ip server>
 ```
 
 بعد فایل رو ذخیره کنید و برای اجرا کردنش این دستور رو بزنید:
